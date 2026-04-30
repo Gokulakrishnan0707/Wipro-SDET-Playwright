@@ -112,3 +112,54 @@ for (let i = 0; i < arr.length; i++) {
     if(typeof element === "number") {
         console.log(element, "is a number");
     }
+
+    //day 1 assignment
+    // swap code
+let a = 5;
+let b = 10;
+
+let temp = a;
+a = b;
+b = temp;
+
+console.log(a, b);
+
+//Type checker
+function checkType(input) {
+  if (typeof input === "number") {
+    console.log("This is number");
+  } else if (typeof input === "string") {
+    console.log("This is string");
+  } 
+}
+checkType(7);
+checkType("Gokul");
+
+//initials creater code
+let fullName = "John Doe";
+let initials = fullName.split(" ")[0][0] + fullName.split(" ")[1][0];
+
+console.log(initials);
+
+//Cleaner code
+let messy = " Javascript is fun ";
+let clean = messy.trim().toLowerCase();
+
+console.log(clean);
+
+//Grocery list code
+let cart = ["Bread", "Butter", "Jam"];
+
+cart.push("Milk"); 
+cart.unshift("Eggs");
+cart.pop();            
+
+console.log(cart);
+
+//value finder code
+let numbers = [10, 20, 30, 40, 50];
+
+let hasThirty = numbers.includes(30); 
+let indexOfFifty = numbers.indexOf(50); 
+
+console.log(hasThirty, indexOfFifty);
