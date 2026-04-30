@@ -3,7 +3,7 @@ let b = 10;
 
 let str = "Hello, World!";
 
-// String operations
+// String operationsgit
 console.log("String:", str);
 console.log("Length of string:", str.length);
 console.log("Uppercase:", str.toUpperCase());
@@ -17,7 +17,7 @@ console.log("Multiplication:", a * b);
 console.log("Division:", a / b);
 console.log("Remainder:", a % b); // Remainder (Modulo)
 
-// Logical operations --> bool
+// Logical operations 
 console.log("a > b:", a > b); // F
 console.log("a < b:", a < b); // T
 console.log("a == b:", a == b); // F === Strict equality (checks value and type)
