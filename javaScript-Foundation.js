@@ -113,3 +113,12 @@ console.log(parseFloat(val));
 let name = "Gokul";
 let greeting = `Hello, ${name}! Welcome to JavaScript.`;
 console.log(greeting);
+
+// splice method
+let arr = [1, 2, 3, 4, 5];
+arr.splice(2, 1); // Removes 1 element at index 2
+console.log(arr); 
+
+// reduce method 
+let sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log("Sum of array elements:", sum);
