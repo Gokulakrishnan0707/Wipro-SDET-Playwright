@@ -94,3 +94,32 @@ console.log(colors.splice(1, 3));
 // console.log(colors.splice(Math.floor(Math.random() * (colors.length - 2)), 1));
 // let str = "Hello World";
 // console.log(str.slice(0, 5)); // "Hello"
+
+//Assignment code
+//Guest list formatter code
+
+function formatGuests(names) {
+names.shift();
+const formatted = names.map(name => `Guest: ${name}`);
+ return formatted.join("\n");
+}
+console.log(formatGuests(["Alice", "Bob", "Charlie", "David"]));
+
+//The logic gate code
+
+const getHighNumbers = (arr) => {
+  const threshold = Math.floor(Math.random() * 50) + 1;
+  return arr
+    .filter(item => typeof item === "number")
+    .filter(num => num > threshold);
+};
+console.log(getHighNumbers([10, "20", 35, "hello", 60, 5]));
+
+//Price calculator code
+
+const prices = ["10.5", "20", "30.25", "5"]; 
+const handlingFee = prices.pop();
+const numericPrices = prices.map(price => Number(price));
+const getTotal = arr => arr.reduce((sum, val) => sum + val, 0);
+const total = getTotal(numericPrices);
+console.log(`Total Price: $${total}`);
