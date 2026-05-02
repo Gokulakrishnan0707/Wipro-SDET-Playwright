@@ -40,8 +40,8 @@ let arr = [1, 2, 3, 4, 5, "Gokul"];
 
 // Using Arrow functions
 arr.filter(x => typeof x === "number").map(y => y * 2).forEach(abc => console.log("Element after * 2:", abc * 2));
-// console.log(arr.find(x => x === "Hrithicka1")); // undefined
-// console.log(arr.find(x => x === "Hrithicka")); // "Hrithicka"
+// console.log(arr.find(x => x === "Gokul1")); // undefined
+// console.log(arr.find(x => x === "Gokul")); // "Gokul"
 
 // Using callback functions
 arr.map(y => y * 2).forEach(abc => console.log("Element after * 2:", abc * 2));
