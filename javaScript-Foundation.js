@@ -131,3 +131,10 @@ console.log("Sum of array elements:", sum);
         }, 2000);
     });
 }
+
+//Fetch API
+fetch("https://jsonplaceholder.typicode.com/photos")
+  .then(res => res.json())
+  .then(arr => arr.filter(p => p.id <= 10))
+  .then(arr => arr.map(p => p.url))
+  .then(data => console.log("Photo URLs:", data));
