@@ -122,3 +122,12 @@ console.log(arr);
 // reduce method 
 let sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 console.log("Sum of array elements:", sum);
+
+//Promises
+    function getData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Data received");
+        }, 2000);
+    });
+}
