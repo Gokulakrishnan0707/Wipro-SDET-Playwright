@@ -258,3 +258,19 @@ function calculatePayroll(employees, taxCallback) {
 }
 
 calculatePayroll(employees, taxLogic);
+
+
+//Prototype example
+function person(name) {
+    this.name = name;
+}
+ 
+person.prototype.sayHi = function() {
+    console.log('Welcome' + this.name);
+}
+const me = new person("Gokul");
+const you = new person("yady");
+me.sayHi();
+you.sayHi();
+console.log(Object.getPrototypeOf(me) === person.prototype)
+console.log(me.sayHi === you.sayHi)
