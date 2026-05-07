@@ -295,3 +295,40 @@ class CoffeMachine {
  
 const myCoffeMachine = new CoffeMachine();
 console.log(myCoffeMachine.brew());
+
+//Flight Booking Data Cleaner
+
+//Used .map() for parsing and object creation.
+//Used array destructuring with .split().
+//Used Number() for type conversion.
+//used isNaN() for validation.
+//Used .filter() to filter flight prices.
+//Used .sort() for ascending order sorting.
+//Used JSON.stringify() for JSON output.
+
+//Question 2 — E-Commerce Discount Applicator
+
+//Used callback function (isEligible) for eligibility checking.
+//Used .map() for transformation.
+//Applied 10% discount using arithmetic operators.
+//Added new property isDiscounted.
+//Used Template Literal for summary message.
+//Used setTimeout() for delayed output.
+
+//Question 3 — Movie Stream Analytics
+
+//Used .map() for parsing and object creation.
+//Used .split() and array destructuring.
+//Used Number() and isNaN() for validation.
+//Used .filter() for genre and view filtering.
+//Used .sort() for descending order sorting.
+//Used JSON.stringify() for final output.
+
+//Question 4 — Automated Payroll Processor
+
+//Used callback function (taxLogic) for tax calculation.
+//Used .map() for employee processing.
+//Calculated tax and net salary using arithmetic operators.
+//Used if/else condition for employee status.
+//Used Template Literal for payroll summary.
+//Used setTimeout() for delayed return. 
