@@ -332,3 +332,134 @@ console.log(myCoffeMachine.brew());
 //Used if/else condition for employee status.
 //Used Template Literal for payroll summary.
 //Used setTimeout() for delayed return. 
+
+// Prototype inheritance
+// It is a mechanism by which objects can inherit properties and methods from other objects. 
+// In JavaScript, every object has a prototype, which is another object that it inherits properties and methods from.
+// When you create a new object using a constructor function, the new object inherits properties and methods from the constructor's prototype. 
+// This allows you to define shared behavior for all instances of a constructor function without having to duplicate code for each instance.
+function person(name) {
+    this.name = name;
+}
+person.prototype.sayHi = function() {
+    console.log('hello ' + this.name);
+}
+const me = new person("Gokul");
+const you = new person("you");
+me.sayHi();
+you.sayHi();
+console.log(Object.getPrototypeOf(me) === person.prototype); // true
+console.log(me.sayHi === you.sayHi); // true
+
+
+// Callback function
+// A callback function is a function that is passed as an argument to another function and is executed after some operation has been completed.
+// give different  simple examples
+function greetUser(name, callback) {
+    console.log('Hello ' + name);
+    callback();
+}
+function sayGoodbye() {
+    console.log('Goodbye!');
+}
+greetUser('Gokul', sayGoodbye);
+
+
+// stack and heap
+// Stack is a data structure that follows the Last In First Out (LIFO) principle. 
+// Heap is a memory area used for dynamic memory allocation where variables are stored as objects.
+// Primitive types (like numbers and strings) are stored in the stack, while objects and arrays are stored in the heap.
+let age = 21; // number --> Stack
+let name = "Gokul"; // string --> Stack
+let user = { // object --> Heap
+    name: "Gokul",
+    age: 21
+}
+
+// Primitive copy (Stack) 
+let x = 5;
+let y = x; // copy of value of x is stored in y
+
+// Reference copy (Heap)
+let obj1 = { name: "Gokul" }; // heap
+let obj2 = obj1;
+obj2.name = "yathesh";
+console.log(obj1.name); // obj1 and obj2 are referencing the same object in heap, so change in obj2 reflects in obj1
+
+
+// spread operator
+// The spread operator (...) allows you to expand an iterable (like an array or object) into individual elements. It is commonly used for copying arrays or objects, merging arrays, and passing elements as function arguments.
+let arr1 = [1, 2, 3];
+let arr2 = [...arr1]; // creates a new array with the same elements as arr1
+console.log(arr2); // [1, 2, 3]
+
+let obj1 = { name: "Gokul", age: 21 };
+let obj2 = { ...obj1 }; // creates a new object with the same properties as obj1
+console.log(obj2); // { name: "Gokul", age: 21 }
+
+// hoisting
+// Hoisting is a JavaScript mechanism where variable and function declarations are moved to the top of their containing scope during the compilation phase. 
+// This means that you can use variables and functions before they are declared in the code. 
+// However, only the declarations are hoisted, not the initializations. 
+// For example, if you declare a variable using var, it will be hoisted and initialized with undefined, while let and const declarations are hoisted but not initialized, resulting in a ReferenceError if accessed before declaration.
+console.log(greet); // undefined due to hoisting of var
+var greet = "Hello, World!";
+console.log(greet); // "Hello, World!"
+
+// function hoisting
+// Function declarations are hoisted, meaning you can call the function before its declaration in the code.
+sayHi(); // "Hello, World!"
+function sayHi() {
+    console.log('Hello, World!');
+}
+
+// arrow function hoisting
+// Arrow functions are not hoisted in the same way as function declarations. If you try to call an arrow function before it is defined, you will get a ReferenceError because the variable that holds the arrow function is not initialized until the code execution reaches that line.
+sayHi(); // ReferenceError: Cannot access 'sayHi' before initialization
+var sayHi = () => {
+    console.log('Hello');
+}
+
+// Object creation and manipulation
+// In JavaScript, you can create objects using object literals, constructor functions, or classes.
+// Object literals
+const car = {
+        brand: "Tesla",
+        start: () => console.log("VroomVroom")
+    }
+// Constructor function
+function start() {
+    console.log("VroomVroom")
+}
+const c1 = new start();
+const c2 = new start();
+start.prototype.stop = function() {
+    console.log("Stop");
+}
+
+// car {start} --> prototype {stop}
+// c1 --> start
+// c2 --> start
+// c1.stop(); // Stop
+
+// Prototype chaining
+// Prototype chaining is a mechanism in JavaScript where objects can inherit properties and methods from other objects through a chain of prototypes. 
+// When you access a property or method on an object, JavaScript first looks for it on the object itself. 
+// If it doesn't find it there, it looks for it on the object's prototype, and if it's not found there, it continues up the prototype chain until it either finds the property/method or reaches the end of the chain (null).
+const animal = { eats: true };
+const rabbit = Object.create(animal); // creates a new object rabbit with prototype animal
+rabbit.carrot = () => console.log("He is eating carrot");
+console.log(rabbit.eats); // inherited from animal
+console.log(rabbit.hasOwnProperty('eats')); // false, because eats is inherited from animal
+console.log(rabbit.hasOwnProperty('carrot')); // true, because carrot is a property of rabbit
+console.log(rabbit.toString()); // toString is inherited from Object.prototype
+
+// array methods
+// sort() method sorts the elements of an array in place and returns the sorted array. By default, it sorts elements as strings in ascending order. 
+// reverse() method reverses the order of the elements in an array in place and returns the reversed array.
+const arr = [1, 2, 3, -1];
+arr.sort(); // sorts the array in ascending order (as strings)
+console.log(arr); // [-1, 1, 2, 3]
+
+arr.reverse(); // reverses the order of the elements
+console.log(arr); // [3, 2, 1, -1]
