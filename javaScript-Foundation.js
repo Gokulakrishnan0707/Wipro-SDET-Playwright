@@ -463,3 +463,22 @@ console.log(arr); // [-1, 1, 2, 3]
 
 arr.reverse(); // reverses the order of the elements
 console.log(arr); // [3, 2, 1, -1]
+
+// closure function
+// It is a function that "remembers" the environment in which it was created.
+// It allows an inner function to access variables from an outer function's scope even after the outer function has finished executing.
+let sum = 0; // 2
+function f() {
+    function increment() {
+        sum++;
+        
+        function inner2() {
+            sum++;
+            console.log(sum);
+        }
+        return inner2();
+    }
+    return increment();
+}
+f();
+console.log(sum);

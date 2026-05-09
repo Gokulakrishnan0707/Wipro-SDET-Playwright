@@ -63,3 +63,20 @@ arr.sort();
 for(let e of arr) { // in -> index, of -> value
     console.log(e);
 }
+
+// closure function
+let sum = 0; // 2
+function f() {
+    function increment() {
+        sum++;
+        
+        function inner2() {
+            sum++;
+            console.log(sum);
+        }
+        return inner2();
+    }
+    return increment();
+}
+f();
+console.log(sum);
