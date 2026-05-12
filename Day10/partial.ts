@@ -16,7 +16,7 @@ interface User {
 
 const u1: User = {
     id: 0,
-    name: "Hrithicka",
+    name: "Gokul",
     email: "",
     age: 0,
     address: {
