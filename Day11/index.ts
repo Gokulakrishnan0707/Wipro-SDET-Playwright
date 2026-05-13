@@ -141,6 +141,21 @@ function safeExecute<T extends (...args: any[]) => Promise<any>>(fn: T) {
   };
 }
 
+async function fetchUser(id: number) {
+  if (id === 0) {
+    throw new Error("Invalid ID");
+  }
+  return {
+    id,
+    name: "Gokul"
+  };
+}
+
+const safeFetchUser = safeExecute(fetchUser);
+
+safeFetchUser(1).then(console.log);
+safeFetchUser(0).then(console.log);
+
 // 9. Index signatures for dynamic metedata
 interface UserMetadata {
   createdAt: Date;
@@ -150,6 +165,15 @@ interface UserMetadata {
     | boolean
     | Date;
 }
+
+const user: UserMetadata = {
+  createdAt: new Date(),
+  username: "Gokul",
+  age: 21,
+  verified: true
+};
+
+console.log(user);
 
 // 10. Mapped types with key remapping
 // Interface

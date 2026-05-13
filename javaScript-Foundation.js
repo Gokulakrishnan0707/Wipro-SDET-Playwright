@@ -482,3 +482,38 @@ function f() {
 }
 f();
 console.log(sum);
+
+// Advance JS concepts
+// Parameters are variables used inside function.
+// They receive values when function is called.
+function greet(name){
+   console.log(`Hello ${name}`);
+}
+greet("Gokul");
+
+// Default paramter
+// If user does not pass value, default value will be used.
+function welcome(name = "Guest"){
+   console.log(`Welcome ${name}!`);
+}
+welcome("Gokul"); // Welcome Gokul!
+welcome(); // Welcome Guest!
+
+// spraed operator (...)
+// It expands values one by one, mostly used in arrays and objects.
+const nums = [1,2,3];
+const newNums = [...nums,4,5]; // old array values copied + new values added
+console.log(newNums);
+
+// Output:
+// [1,2,3,4,5]
+
+// spread operator with object copies old object values into new object.
+const obj = {
+   name:"Gokul"
+};
+const updatedObj = {
+   ...obj,
+   age:21
+};
+console.log(updatedObj);
