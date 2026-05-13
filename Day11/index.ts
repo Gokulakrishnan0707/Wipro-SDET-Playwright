@@ -82,27 +82,6 @@ type FolderNode = {
   subFolders?: FolderNode[];
 };
 
-// Example
-const folder: FolderNode = {
-  name: "Projects",
-  files: ["app.ts", "index.html"],
-
-  subFolders: [
-    {
-      name: "Images",
-      files: ["logo.png"]
-    },
-
-    {
-      name: "Docs",
-      files: ["readme.md"]
-    }
-  ]
-};
-
-console.log(folder);
-
-
 // 5. Template Literal Types for CSS
 type MarginValue =
   | `${number}px`
@@ -114,9 +93,6 @@ let margin1: MarginValue = "10px";
 let margin2: MarginValue = "2rem";
 let margin3: MarginValue = "50vh";
 
-// Invalid
-// let margin4: MarginValue = "20";
-// let margin5: MarginValue = "abcpx";
 
 // 6. Conditional types and infer keyword
 // Utility Type
@@ -165,26 +141,6 @@ function safeExecute<T extends (...args: any[]) => Promise<any>>(fn: T) {
   };
 }
 
-// Example Async Function
-async function fetchUser(id: number) {
-  if (id === 0) {
-    throw new Error("Invalid ID");
-  }
-
-  return {
-    id,
-    name: "Gokul"
-  };
-}
-
-// Wrapped Function
-const safeFetchUser = safeExecute(fetchUser);
-
-// Calls
-safeFetchUser(1).then(console.log);
-safeFetchUser(0).then(console.log);
-
-
 // 9. Index signatures for dynamic metedata
 interface UserMetadata {
   createdAt: Date;
@@ -194,17 +150,6 @@ interface UserMetadata {
     | boolean
     | Date;
 }
-
-// Example
-const user: UserMetadata = {
-  createdAt: new Date(),
-  username: "Gokul",
-  age: 21,
-  verified: true
-};
-
-console.log(user);
-
 
 // 10. Mapped types with key remapping
 // Interface
