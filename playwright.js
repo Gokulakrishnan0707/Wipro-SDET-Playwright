@@ -40,3 +40,14 @@
 // 6. Assertion / Validation
 // expect(page.url()).toBe("https://www.techxincorporation.com/contact");
 // Checks whether current URL matches expected URL
+
+// Creating a web server using Express
+// 2. Serving static HTML/CSS files
+// 3. Handling GET and POST routes
+// 4. Using dotenv for environment variables
+// 5. Frontend–backend communication using fetch()
+// 6. Creating a Login form UI
+// 7. Data validation on server
+// 8. Writing data-driven tests using Playwright
+// 9. Understanding why server must run before tests
+// 10. Debugging ERR_CONNECTION_REFUSED
