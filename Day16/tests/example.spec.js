@@ -7,7 +7,7 @@ test.describe('testing index.html', async () => {
   // });
 
   test.beforeEach(async ({ page }) =>
-    await page.goto('http://localhost:5500/Day13/webapp/public/index.html')
+    await page.goto('http://127.0.0.1:5500/Day13/webapp/public/index.html')
   );
 
   test('handle alert', async ({ page }) => {
@@ -22,7 +22,7 @@ test.describe('testing index.html', async () => {
   });
 
   test('check home title', async ({ page }) => {
-    const heading = page.getByRole('heading', { name: 'Home' });
+    const heading = page.getByRole('heading', { name: 'Home Page' });
 
     await expect(heading).toBeVisible();
   });
