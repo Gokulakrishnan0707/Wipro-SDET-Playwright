@@ -19,6 +19,7 @@ test.describe('jio mart test', () => {
     await page.goto('https://www.jiomart.com/profile');
 
     const profileName = page.getByTestId("JDSText-text").nth(0);
-    await expect(profileName).not.toHaveText("Almost there!", { timeout: 15000 });
+    console.log(await profileName.textContent());
+    expect(profileName).toHaveText("Gokulakrishnan Kumar");
   });
 });
